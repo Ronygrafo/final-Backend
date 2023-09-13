@@ -439,8 +439,8 @@
   --bd-purple: #4c0bce;
   --bd-violet: #712cf9;
   --bd-accent: #ffe484;
-  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-  --bd-accent-rgb: 255, 228, 132;
+  --bd-violet-rgb:  0,0,128;
+  --bd-accent-rgb: 0,0,100;
   --bd-pink-rgb: 214, 51, 132;
   --bd-teal-rgb: 32, 201, 151;
   --docsearch-primary-color: var(--bd-violet);
