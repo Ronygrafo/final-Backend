@@ -68,7 +68,7 @@ class OdontologoControllerTest {
     
     odontologo = new OdontologoDTO("M088", "Glenda", "Dunne");
     odontologoInexistente = new OdontologoDTO(111, "NN", "NN", "NN");
-    odontologoExistente = new OdontologoDTO(1, "M088", "Glenda", "Dunne");
+    odontologoExistente = new OdontologoDTO(3, "M088", "Glenda", "Dunne");
     odontologosEncontrados = new ArrayList<>();
   }
   
@@ -107,7 +107,7 @@ class OdontologoControllerTest {
   @Test
   @DisplayName("Buscar Odontólogo por id: éxito")
   void buscarPorIdOk() throws Exception {
-    Mockito.when(odontologoService.buscar(1)).thenReturn(odontologoExistente);
+    Mockito.when(odontologoService.buscar(3)).thenReturn(odontologoExistente);
     MvcResult response = mockMvc.perform(MockMvcRequestBuilders.get("/odontologos/3")
             .contentType(MediaType.APPLICATION_JSON)
             .header("Authorization", authToken)
