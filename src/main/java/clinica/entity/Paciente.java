@@ -1,4 +1,4 @@
-package clinica.entities;
+package clinica.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

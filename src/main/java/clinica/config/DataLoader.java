@@ -1,24 +1,24 @@
 package clinica.config;
 
-import clinica.config.auth.AuthenticationService;
+import clinica.config.auth.AuthService;
 import clinica.config.auth.RegisterRequest;
-import clinica.entities.security.Role;
+import clinica.entity.security.Role;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoader implements ApplicationRunner {
-  private final AuthenticationService authenticationService;
+  private final AuthService authService;
   
-  public DataLoader(AuthenticationService authenticationService) {
-    this.authenticationService = authenticationService;
+  public DataLoader(AuthService authService) {
+    this.authService = authService;
   }
   
   @Override
   public void run(ApplicationArguments args) {
     
-    authenticationService.register(
+    authService.register(
         RegisterRequest.builder()
             .username("admin")
             .email("admin@admin.com")
@@ -27,7 +27,7 @@ public class DataLoader implements ApplicationRunner {
             .build()
     );
   
-    authenticationService.register(
+    authService.register(
         RegisterRequest.builder()
             .username("user")
             .email("user@admin.com")

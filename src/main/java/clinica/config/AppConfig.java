@@ -20,14 +20,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @RequiredArgsConstructor
-public class ApplicationConfig {
+public class AppConfig {
   private final UsuarioRepository usuarioRepository;
   
   @Bean
   public OpenAPI springShopOpenAPI() {
     return new OpenAPI()
         .info(new Info().title("Clinica Dental API")
-            .description("Trabajo integrador Backend - Lucas Diaz")
+            .description("Trabajo integrador Backend - Rony Romero Duque - Glenda Dunne")
             .version("v0.0.1")
             .license(new License().name("Apache 2.0").url("http://springdoc.org")))
         .externalDocs(new ExternalDocumentation()

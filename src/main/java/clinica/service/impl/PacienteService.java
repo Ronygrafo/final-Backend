@@ -1,6 +1,6 @@
 package clinica.service.impl;
 
-import clinica.entities.Paciente;
+import clinica.entity.Paciente;
 import clinica.exceptions.BadRequestException;
 import clinica.exceptions.ResourceNotFoundException;
 import clinica.model.PacienteDTO;

@@ -1,4 +1,4 @@
-package clinica.entities;
+package clinica.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

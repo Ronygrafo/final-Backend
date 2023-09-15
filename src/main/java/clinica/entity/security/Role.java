@@ -1,4 +1,4 @@
-package clinica.entities.security;
+package clinica.entity.security;
 
 public enum Role {
   

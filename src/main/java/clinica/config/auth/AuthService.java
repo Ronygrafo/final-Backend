@@ -1,7 +1,7 @@
 package clinica.config.auth;
 
-import clinica.entities.security.Role;
-import clinica.entities.security.Usuario;
+import clinica.entity.security.Role;
+import clinica.entity.security.Usuario;
 import clinica.repository.security.UsuarioRepository;
 import clinica.config.JwtService;
 import clinica.token.Token;
@@ -15,14 +15,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AuthenticationService {
+public class AuthService {
   private final UsuarioRepository usuarioRepository;
   private final TokenRepository tokenRepository;
   private final PasswordEncoder passwordEncoder;
   private final JwtService jwtService;
   private final AuthenticationManager authenticationManager;
   
-  public AuthenticationResponse register(RegisterRequest request) {
+  public AuthResponse register(RegisterRequest request) {
     var user = Usuario.builder()
         .username(request.getUsername())
         .email(request.getEmail())
@@ -32,12 +32,12 @@ public class AuthenticationService {
     var savedUser = usuarioRepository.save(user);
     var jwtToken = jwtService.generateToken(user);
     saveUserToken(savedUser, jwtToken);
-    return AuthenticationResponse.builder()
+    return AuthResponse.builder()
         .token(jwtToken)
         .build();
   }
   
-  public AuthenticationResponse authenticate(AuthenticationRequest request) {
+  public AuthResponse authenticate(AuthRequest request) {
     authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(
             request.getUsername(),
@@ -49,7 +49,7 @@ public class AuthenticationService {
     var jwtToken = jwtService.generateToken(user);
     revokeAllUserTokens(user);
     saveUserToken(user, jwtToken);
-    return AuthenticationResponse.builder()
+    return AuthResponse.builder()
         .token(jwtToken)
         .build();
   }

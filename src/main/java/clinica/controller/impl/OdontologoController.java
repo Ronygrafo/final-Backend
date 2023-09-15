@@ -15,7 +15,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/odontologos")
@@ -83,7 +85,8 @@ public class OdontologoController implements CRUDController<OdontologoDTO> {
     odontologoService.eliminar(id);
     return ResponseEntity.ok(("Se eliminó el odontólogo con id " + id));
   }
-  
+
+
   @Operation(summary = "Busca todos los odontólogos")
   @ApiResponses(value = {
       @ApiResponse(responseCode = "200", description = "Success | OK"),

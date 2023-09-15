@@ -1,6 +1,6 @@
 package clinica.config.auth;
 
-import clinica.entities.security.Role;
+import clinica.entity.security.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

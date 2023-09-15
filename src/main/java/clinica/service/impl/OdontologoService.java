@@ -1,6 +1,6 @@
 package clinica.service.impl;
 
-import clinica.entities.Odontologo;
+import clinica.entity.Odontologo;
 import clinica.exceptions.BadRequestException;
 import clinica.exceptions.ResourceNotFoundException;
 import clinica.model.OdontologoDTO;

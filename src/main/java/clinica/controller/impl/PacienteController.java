@@ -71,7 +71,7 @@ public class PacienteController implements CRUDController<PacienteDTO> {
     return ResponseEntity.ok(("Se eliminó el paciente con id " + id));
   }
   
-  @Operation(summary = "Busca todos los odontólogos")
+  @Operation(summary = "Busca todos los pacientes")
   @ApiResponses(value = {
       @ApiResponse(responseCode = "200", description = "Success | OK"),
       @ApiResponse(responseCode = "404", description = "Bad Request", content = @Content) })

@@ -1,6 +1,6 @@
 package clinica.repository.security;
 
-import clinica.entities.security.Usuario;
+import clinica.entity.security.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

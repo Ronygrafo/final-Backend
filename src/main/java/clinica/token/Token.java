@@ -1,6 +1,6 @@
 package clinica.token;
 
-import clinica.entities.security.Usuario;
+import clinica.entity.security.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
