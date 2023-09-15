@@ -20,8 +20,8 @@ class PacienteServiceTest {
   
   @BeforeEach
   void setUp() {
-    paciente = new PacienteDTO("Lucas", "Diaz", "12345678", LocalDate.now());
-    DomicilioDTO domicilio = new DomicilioDTO("Teodoro Fels", 785, "Santa Rosa", "La Pampa");
+    paciente = new PacienteDTO("Juana", "Alvarez", "23594520", LocalDate.now());
+    DomicilioDTO domicilio = new DomicilioDTO("Roma", 55, "CABA", "Buenos Aires");
     paciente.setDomicilio(domicilio);
   }
   
@@ -41,14 +41,14 @@ class PacienteServiceTest {
   @Test
   void actualizar() throws Exception {
     PacienteDTO pacienteGuardado = pacienteService.guardar(paciente);
-    pacienteGuardado.setNombre("Luks");
-    pacienteGuardado.setApellido("Diaz");
-    pacienteGuardado.setCedula("87654321");
+    pacienteGuardado.setNombre("Paula");
+    pacienteGuardado.setApellido("Alvarez");
+    pacienteGuardado.setCedula("33456789");
     pacienteGuardado.setFechaDeIngreso(LocalDate.now());
-    pacienteGuardado.getDomicilio().setCalle("Teodoro Fels");
-    pacienteGuardado.getDomicilio().setNumero(785);
-    pacienteGuardado.getDomicilio().setLocalidad("Santa Rosa");
-    pacienteGuardado.getDomicilio().setProvincia("La Pampa");
+    pacienteGuardado.getDomicilio().setCalle("Roma");
+    pacienteGuardado.getDomicilio().setNumero(55);
+    pacienteGuardado.getDomicilio().setLocalidad("CABA");
+    pacienteGuardado.getDomicilio().setProvincia("Buenos Aires");
     PacienteDTO pacienteActualizado = pacienteService.actualizar(pacienteGuardado);
     assertEquals(pacienteGuardado, pacienteActualizado);
   }

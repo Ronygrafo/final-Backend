@@ -21,9 +21,9 @@ class OdontologoServiceTest {
   @BeforeEach
   public void setUp() {
     odontologo = new OdontologoDTO();
-    odontologo.setNombre("Lucas");
-    odontologo.setApellido("Diaz");
-    odontologo.setNumeroMatricula("M007");
+    odontologo.setNombre("Rony ");
+    odontologo.setApellido("Romero");
+    odontologo.setNumeroMatricula("M127");
   }
   
   @Test
@@ -49,9 +49,9 @@ class OdontologoServiceTest {
   @Test
   void actualizar() throws Exception {
     OdontologoDTO odontologoGuardado = odontologoService.guardar(odontologo);
-    odontologoGuardado.setNombre("Martin");
-    odontologoGuardado.setApellido("Lobos");
-    odontologoGuardado.setNumeroMatricula("M008");
+    odontologoGuardado.setNombre("Glenda");
+    odontologoGuardado.setApellido("Dunne");
+    odontologoGuardado.setNumeroMatricula("M088");
     OdontologoDTO odontologoActualizado = odontologoService.actualizar(odontologoGuardado);
     assertEquals(odontologoGuardado, odontologoActualizado);
   }

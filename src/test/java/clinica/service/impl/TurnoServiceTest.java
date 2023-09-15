@@ -30,21 +30,21 @@ class TurnoServiceTest {
   @BeforeEach
   public void setUp() {
     DomicilioDTO domicilio = new DomicilioDTO();
-    domicilio.setCalle("Teodoro Fels");
-    domicilio.setNumero(785);
-    domicilio.setLocalidad("Springfield");
-    domicilio.setProvincia("Springfield");
+    domicilio.setCalle("Roma");
+    domicilio.setNumero(55);
+    domicilio.setLocalidad("Lomas de zamora");
+    domicilio.setProvincia("Buenos Aires");
     
     paciente = new PacienteDTO();
-    paciente.setNombre("Lucas");
-    paciente.setApellido("Diaz");
-    paciente.setCedula("12345678");
+    paciente.setNombre("Paula");
+    paciente.setApellido("Alvarez");
+    paciente.setCedula("23594520");
     paciente.setDomicilio(domicilio);
     
     odontologo = new OdontologoDTO();
-    odontologo.setNombre("Martin");
-    odontologo.setApellido("Lobos");
-    odontologo.setNumeroMatricula("M008");
+    odontologo.setNombre("Rony");
+    odontologo.setApellido("Romero");
+    odontologo.setNumeroMatricula("M127");
   }
   
   @Test

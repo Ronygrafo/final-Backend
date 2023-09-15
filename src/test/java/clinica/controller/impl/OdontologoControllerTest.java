@@ -66,9 +66,9 @@ class OdontologoControllerTest {
         .andReturn();
     authToken = "Bearer " + authResult.getResponse().getContentAsString();
     
-    odontologo = new OdontologoDTO("M123", "Lucas", "Diaz");
-    odontologoInexistente = new OdontologoDTO(999, "NN", "NN", "NN");
-    odontologoExistente = new OdontologoDTO(3, "M123", "Lucas", "Diaz");
+    odontologo = new OdontologoDTO("M088", "Glenda", "Dunne");
+    odontologoInexistente = new OdontologoDTO(111, "NN", "NN", "NN");
+    odontologoExistente = new OdontologoDTO(1, "M088", "Glenda", "Dunne");
     odontologosEncontrados = new ArrayList<>();
   }
   
@@ -107,7 +107,7 @@ class OdontologoControllerTest {
   @Test
   @DisplayName("Buscar Odontólogo por id: éxito")
   void buscarPorIdOk() throws Exception {
-    Mockito.when(odontologoService.buscar(3)).thenReturn(odontologoExistente);
+    Mockito.when(odontologoService.buscar(1)).thenReturn(odontologoExistente);
     MvcResult response = mockMvc.perform(MockMvcRequestBuilders.get("/odontologos/3")
             .contentType(MediaType.APPLICATION_JSON)
             .header("Authorization", authToken)
@@ -136,7 +136,7 @@ class OdontologoControllerTest {
   @Test
   @DisplayName("Buscar Odontólogos por nombre: éxito")
   void buscarPorNombreOk() throws Exception {
-    String nombre = "Lucas";
+    String nombre = "Glenda";
     Mockito.when(odontologoService.buscarPorNombre(nombre)).thenReturn(odontologosEncontrados);
     MvcResult response = mockMvc.perform(MockMvcRequestBuilders.get("/odontologos/")
             .param("nombre", nombre)
@@ -170,7 +170,7 @@ class OdontologoControllerTest {
   @Test
   @DisplayName("Buscar Odontólogos por nombre: no encontrado")
   void buscarPorNombreNoEncontrado() throws Exception {
-    String nombre = "Pichon";
+    String nombre = "Paola";
     Mockito.doThrow(new ResourceNotFoundException("No se encontró el odontólogo con nombre " + nombre)).when(odontologoService).buscarPorNombre(nombre);
     MvcResult response = mockMvc.perform(MockMvcRequestBuilders.get("/odontologos/")
             .param("nombre", nombre)
