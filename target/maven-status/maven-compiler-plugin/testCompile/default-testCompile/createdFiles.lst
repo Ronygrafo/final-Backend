@@ -1,7 +1,0 @@
-clinica/ClinicaDentalApplicationTests.class
-clinica/controller/impl/OdontologoControllerTest.class
-clinica/controller/impl/TurnoControllerTest.class
-clinica/service/impl/OdontologoServiceTest.class
-clinica/service/impl/TurnoServiceTest.class
-clinica/service/impl/PacienteServiceTest.class
-clinica/controller/impl/PacienteControllerTest.class
